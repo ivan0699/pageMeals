@@ -4,30 +4,31 @@ import ItemList from './ItemList';
 
 const ItemListContainer = () => {
   
-    const URL = 'https://www.themealdb.com/api/json/v1/1/search.php?f=a'
+    
+    let URL2 = 'https://www.themealdb.com/api/json/v1/1/search.php?s='
     const [search, setSearch] = useState('');
     const [products, setProducts] = useState([]);
-    let url = 'ad';
-    let url2 = URL + search;
+    const [URL, setURL] = useState('https://www.themealdb.com/api/json/v1/1/search.php?s=a');
       
     const handleChange = (event) => {
-          setSearch(event.target.value);
+      setSearch(event.target.value);
+          
     }
       
     const handleSubmit = (event) => {
-    event.preventDefault();
-         url = URL + event;
-    console.log(`Searching for ${search}... ${url}` );
-    }
-      if(true){
+      event.preventDefault();
+      setURL(URL2 + search);
+    } 
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(URL);
-        const data = await response.json();
-        console.log(data)
-        setProducts(data.meals);
+        console.log({URL} );
+        let response = await fetch(URL);
+        let data = await response.json();
+        if(Object.keys(data.meals).length > 0) {
+          setProducts(data.meals);
+        }
       } 
       catch (error) {
         console.error('Error al obtener datos:', error);
@@ -35,7 +36,7 @@ const ItemListContainer = () => {
     };
 
     fetchData();
-  }, []);}
+  }, [URL]);
 
   return (
     <div>

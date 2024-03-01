@@ -1,0 +1,67 @@
+
+
+.card{
+  display: flex;
+  flex-direction:row;
+  margin-bottom: 45px;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+}
+
+
+
+
+  img {
+    height: 70%;
+    width: 70%;
+    border-radius: 25px;
+
+  }
+
+  .Buy{
+
+    background: rgb(84, 131, 239);
+    height: 70%;
+    width: 40%;
+    align-items: center;
+
+  }
+  
+   .blockbot{
+
+    display: flex;
+    flex-direction: row;
+    margin-left: 150px;
+    
+
+   }
+  
+  .ing-container {
+    
+    font-size: 8px;
+    margin-left: -40px;
+    
+    
+    
+    
+       
+  }
+  .name {
+    
+    align-items: center;
+    margin-left: -35px;
+
+
+    
+    
+
+  }

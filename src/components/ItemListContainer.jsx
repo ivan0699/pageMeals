@@ -9,7 +9,7 @@ const ItemListContainer = () => {
     const [search, setSearch] = useState('');
     const [products, setProducts] = useState([]);
     const [URL, setURL] = useState('https://www.themealdb.com/api/json/v1/1/search.php?s=a');
-      
+    
     const handleChange = (event) => {
       setSearch(event.target.value);
           
@@ -43,7 +43,9 @@ const ItemListContainer = () => {
       <h2>List of meals</h2>
       <form onSubmit={handleSubmit}>
             <input type="text" value={search} onChange={handleChange} />
+            <div>
             <button type="submit">Search</button>
+            </div>
           </form>
           
       

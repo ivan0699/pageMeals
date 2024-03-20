@@ -1,33 +1,47 @@
 import React, {useEffect, useState} from 'react';
 import './product.css'
+import Car from './car';
 
 
 const Item = ({product}) => {
 
     const [count, setCount] = useState(0);
+    const [data, setData] = useState(null);
     const price = product.idMeal.slice(1,-1);
-    const carData = { 
+    const carData = {
+        id: product.idMeal,
         name: product.name,
         price: price,
         img: product.strMealThumb,
         count: count,
-    };    
+    };
+
+    const fetchData = async () => {
+        try {
+          let response = await fetch('/car.json');
+          console.log(response);
+          let data = await response.json();
+          
+            setData(data);
+          
+        } 
+        catch (error) {
+          console.error('Error al obtener datos:', error);
+        }
+      };
+      fetchData();
+      
     
     const handleClick1 = () => {
 
       setCount(count + 1);
+      carData.count = count;
       
-    }
-    
-    useEffect(() => {
-
-        localStorage.setItem("carData", JSON.stringify(carData));
-
-    },[count]);
-    
+    }   
 
     return(
         <>
+        <Car hiden = {true}/>
         <p>${price}</p>
         <div class="card">
             <div class="name">

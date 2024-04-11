@@ -1,39 +1,25 @@
 import React, {useState, useEffect} from "react";
 
 function Car(props) {
-    const hiden = props.hiden;
-    const [data, setData] = useState(null);
-    
+    const [count, setCount] = useState(localStorage.length);
     useEffect(() => {
-        const fetchData = async () => {
-          try {
-            let response = await fetch('/car.json');
-            console.log(response);
-            let data = await response.json();
+        function chekdata() {
+            console.log("hola");
+            setCount(localStorage.length);
             
-              setData(data);
-            
-          } 
-          catch (error) {
-            console.error('Error al obtener datos:', error);
-          }
-        };
+        }
+        window.addEventListener('storage',chekdata());
+        
+
+    }, onstorage, onload);
     
-        fetchData();
-      }, []);
-
-
-    if (!hiden) {
-
     return (
         <div>
-        <p>hola</p>
+        <img class="product" src='https://w7.pngwing.com/pngs/879/25/png-transparent-web-development-e-commerce-shopping-cart-software-online-shopping-business-text-service-people.png'/>
+        <p> {count}</p>
         </div>
-    )
-    }else {
 
-        return (<p>algoalgo</p>)
-    }
+    )   
 
 }
 

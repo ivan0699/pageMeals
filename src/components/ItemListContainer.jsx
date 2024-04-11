@@ -1,5 +1,8 @@
 import React, { useState , useEffect } from 'react'
 import ItemList from './ItemList';
+import './ItemListContainer.css'
+
+
 
 
 const ItemListContainer = () => {
@@ -39,18 +42,28 @@ const ItemListContainer = () => {
   }, [URL]);
 
   return (
-    <div>
-      <h2>List of meals</h2>
-      <form onSubmit={handleSubmit}>
-            <input type="text" value={search} onChange={handleChange} />
-            <div>
-            <button type="submit">Search</button>
+   
+    
+    <div >
+      
+        <form  onSubmit={handleSubmit}>
+            <div className="search" >
+                <div className="input">
+                    <input type="text" value={search} onChange={handleChange} />
+                </div>
+                <div >
+                    <button className="buton" type="submit">Search</button>
+                </div>
             </div>
-          </form>
+        </form>
           
       
-      <ItemList products={products} />
+          
+        <div className="items">
+            <ItemList products={products} />
+        </div>
     </div>
+    
   );
 };
 

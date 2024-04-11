@@ -28,6 +28,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  color:#070303;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/008/165/020/non_2x/bokeh-backgrounds-are-bursting-with-color-and-glamor-like-a-celebration-suitable-for-advertising-background-free-photo.JPG");
 }
 
 h1 {

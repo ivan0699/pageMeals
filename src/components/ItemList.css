@@ -1,6 +1,72 @@
 .row{
     
-    column-count: 3;
+    
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    transition: transform .2s;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  
+
     
     
 }
+
+img {
+    height: 50%;
+    width: 50%;
+    border-radius: 25px;
+
+  }
+
+
+
+.card{
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-around;
+    
+    
+}
+
+.name2{
+
+    margin-right: 90px;
+}
+
+.ing-container {
+    
+    font-size: 8px;
+    margin-left: -48px;
+    
+    
+          
+  }
+
+  .Buy{
+
+    background: rgb(84, 131, 239);
+    
+    
+    align-items: center;
+
+  }
+  .card:hover{
+    transform: scale(1.45);
+
+
+  }
+  
+.car {
+
+    position: relative;
+    top: -130px; 
+    left: 700px;
+    height: 20%;
+    width: 20%;
+}
+
+
